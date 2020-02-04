@@ -1,0 +1,5 @@
+matplotlib==3.1.3
+onnxmltools==1.6.0
+xgboost==0.90
+pytest==5.3.3
+pandas==1.0.0
