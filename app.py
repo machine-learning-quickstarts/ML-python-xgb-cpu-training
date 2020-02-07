@@ -19,7 +19,7 @@ RANDOM_SEED = 42
 # Step 1: Set up target metrics for evaluating training
 
 # Define a target loss metric to aim for
-target_f1 = 90
+target_f1 = 0.9
 
 # instantiate classifier and scaler
 xgb = XGBClassifier(silent=False)
@@ -57,7 +57,7 @@ f1_metric = f1_score(y_test, y_pred, average='weighted')
 print(f"f1 score: {round(f1_metric, 3)}")
 
 # Only persist the model if we have passed our desired threshold
-if target_f1 < f1_metric:
+if f1_metric < target_f1:
     sys.exit('Training failed to meet threshold')
 
 # Step 4: Persist the trained model in joblib format in the local file system along with any significant metrics
