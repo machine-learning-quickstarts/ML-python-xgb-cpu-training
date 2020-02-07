@@ -60,7 +60,7 @@ print(f"f1 score: {round(f1_metric, 3)}")
 if f1_metric < target_f1:
     sys.exit('Training failed to meet threshold')
 
-# Step 4: Persist the trained model in joblib format in the local file system along with any significant metrics
+# Step 4: Persist the trained model in ONNX format in the local file system along with any significant metrics
 
 # persist model
 initial_type = [('float_input', FloatTensorType([None, len(feat_names)]))]
