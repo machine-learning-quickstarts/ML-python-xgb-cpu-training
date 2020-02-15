@@ -64,7 +64,7 @@ if f1_metric < target_f1:
 
 # persist model
 initial_type = [('float_input', FloatTensorType([None, len(feat_names)]))]
-onx = onnxmltools.convert.convert_xgboost(xgb, initial_type)
+onx = onnxmltools.convert.convert_xgboost(xgb, initial_type=initial_type)
 
 with open("model.onnx", "wb") as f:
     f.write(onx.SerializeToString())
